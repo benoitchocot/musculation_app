@@ -10,7 +10,6 @@ try {
         echo "ID: " . $row['id'] . "<br>";
         echo "Titre: " . $row['title'] . "<br>";
         echo "Description: " . $row['description'] . "<br>";
-        echo "Date: " . $row['date'] . "<br><br>";
     }
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();

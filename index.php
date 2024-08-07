@@ -26,7 +26,6 @@
                     echo "<a href='session.php?id=" . htmlspecialchars($row['id']) . "' class='list-group-item list-group-item-action'>";
                     echo "<h5 class='mb-1'>" . htmlspecialchars($row['title']) . "</h5>";
                     echo "<p class='mb-1'>" . htmlspecialchars($row['description']) . "</p>";
-                    echo "<small>Date : " . htmlspecialchars($row['date']) . "</small>";
                     echo "</a>";
                 }
                 echo "</div>";
