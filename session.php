@@ -41,9 +41,8 @@
                             if ($exercise['photo']) {
                                 echo "<img src='" . htmlspecialchars($exercise['photo']) . "' alt='Photo de l'exercice' class='img-thumbnail' width='100' height='100'><br>";
                             }
-                            echo "<strong>" . htmlspecialchars($exercise['title']) . "</strong><br>";
-                            echo "Poids : " . htmlspecialchars($exercise['weight']) . " kg<br>";
-                            echo "Répétitions : " . htmlspecialchars($exercise['repetitions']) . "<br>";
+                            echo "<strong><a href='exercise.php?id=" . htmlspecialchars($exercise['id']) . "'>" . htmlspecialchars($exercise['title']) . "</a></strong><br>";
+                            echo htmlspecialchars($exercise['description']) . "<br>";
                             echo "</li>";
                         }
                         echo "</ul>";
@@ -59,16 +58,12 @@
                     echo "<input type='text' class='form-control' id='title' name='title' required>";
                     echo "</div>";
                     echo "<div class='form-group'>";
+                    echo "<label for='description'>Description</label>";
+                    echo "<textarea class='form-control' id='description' name='description' rows='3' required></textarea>";
+                    echo "</div>";
+                    echo "<div class='form-group'>";
                     echo "<label for='photo'>Photo de l'exercice (optionnelle)</label>";
                     echo "<input type='file' class='form-control-file' id='photo' name='photo'>";
-                    echo "</div>";
-                    echo "<div class='form-group'>";
-                    echo "<label for='weight'>Poids (kg)</label>";
-                    echo "<input type='number' step='0.01' class='form-control' id='weight' name='weight' required>";
-                    echo "</div>";
-                    echo "<div class='form-group'>";
-                    echo "<label for='repetitions'>Nombre de répétitions</label>";
-                    echo "<input type='number' class='form-control' id='repetitions' name='repetitions' required>";
                     echo "</div>";
                     echo "<input type='hidden' name='session_id' value='" . htmlspecialchars($id) . "'>";
                     echo "<button type='submit' class='btn btn-primary'>Ajouter</button>";
